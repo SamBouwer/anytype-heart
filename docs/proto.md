@@ -10650,6 +10650,7 @@ Deletes the object, keys from the local store and unsubscribe from remote change
 | error | [Rpc.Object.ListExport.Response.Error](#anytype.Rpc.Object.ListExport.Response.Error) |  |  |
 | path | [string](#string) |  |  |
 | succeed | [int32](#int32) |  |  |
+| failed | [int32](#int32) |  |  |
 | event | [ResponseEvent](#anytype.ResponseEvent) |  |  |
 
 
