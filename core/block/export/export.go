@@ -44,7 +44,7 @@ const CName = "export"
 
 const (
 	profileFile  = "profile"
-	tempFileName = "temp"
+	tempFileName = "temp_anytype_backup"
 )
 
 var log = logging.Logger("anytype-mw-export")
