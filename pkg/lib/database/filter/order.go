@@ -1,10 +1,10 @@
 package filter
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
-	"github.com/anytypeio/go-anytype-middleware/util/pbtypes"
-	time_util "github.com/anytypeio/go-anytype-middleware/util/time"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/util/pbtypes"
+	time_util "github.com/anyproto/anytype-heart/util/time"
 	"github.com/gogo/protobuf/types"
 	"strings"
 )

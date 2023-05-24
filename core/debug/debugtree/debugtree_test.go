@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core/smartblock"
+	"github.com/anyproto/anytype-heart/pkg/lib/core/smartblock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

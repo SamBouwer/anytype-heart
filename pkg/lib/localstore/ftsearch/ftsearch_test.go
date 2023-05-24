@@ -3,8 +3,8 @@ package ftsearch
 import (
 	"context"
 	"encoding/json"
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/core/wallet"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/core/wallet"
 	"github.com/blevesearch/bleve/v2"
 	"github.com/golang/mock/gomock"
 	"os"

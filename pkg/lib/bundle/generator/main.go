@@ -9,14 +9,14 @@ import (
 	"os"
 	"strings"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/addr"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/addr"
 
 	. "github.com/dave/jennifer/jen"
 )
 
 const (
-	relPbPkg = "github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
-	addrPkg  = "github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/addr"
+	relPbPkg = "github.com/anyproto/anytype-heart/pkg/lib/pb/model"
+	addrPkg  = "github.com/anyproto/anytype-heart/pkg/lib/localstore/addr"
 
 	typePrefix = "_ot"
 )

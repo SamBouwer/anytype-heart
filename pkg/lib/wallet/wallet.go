@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/anytypeio/go-slip10"
+	"github.com/anyproto/go-slip10"
 	"github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/tyler-smith/go-bip39"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 )
 
 var log = logging.Logger("anytype-core-wallet")

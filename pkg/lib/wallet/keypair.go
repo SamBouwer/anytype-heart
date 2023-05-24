@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/libp2p/go-libp2p/core/peer"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/strkey"
+	"github.com/anyproto/anytype-heart/pkg/lib/strkey"
 	"github.com/libp2p/go-libp2p/core/crypto"
 )
 

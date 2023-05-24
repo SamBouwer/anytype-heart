@@ -4,7 +4,7 @@ source: pkg/lib/bundle/relations.json
 */
 package bundle
 
-import "github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+import "github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 
 const RelationChecksum = "47980e2ed93f7ed22d3c6f22facaf03a60bc1f5aa7fbe959baf94ee4509dadc7"
 

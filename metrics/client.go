@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 	"github.com/msingleton/amplitude-go"
 )
 

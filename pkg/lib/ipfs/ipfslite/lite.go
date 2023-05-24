@@ -33,14 +33,14 @@ import (
 	madns "github.com/multiformats/go-multiaddr-dns"
 	"github.com/textileio/go-threads/util"
 
-	app "github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/core/anytype/config"
-	"github.com/anytypeio/go-anytype-middleware/core/wallet"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/ipfs"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/net/resolver"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/util/nocloserds"
+	app "github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/core/anytype/config"
+	"github.com/anyproto/anytype-heart/core/wallet"
+	"github.com/anyproto/anytype-heart/pkg/lib/datastore"
+	"github.com/anyproto/anytype-heart/pkg/lib/ipfs"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/net/resolver"
+	"github.com/anyproto/anytype-heart/pkg/lib/util/nocloserds"
 )
 
 const CName = "ipfs"

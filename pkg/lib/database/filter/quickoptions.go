@@ -1,10 +1,10 @@
 package filter
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
-	"github.com/anytypeio/go-anytype-middleware/util/pbtypes"
-	timeutil "github.com/anytypeio/go-anytype-middleware/util/time"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/util/pbtypes"
+	timeutil "github.com/anyproto/anytype-heart/util/time"
 	"time"
 )
 

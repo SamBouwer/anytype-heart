@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	pb2 "github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pin"
+	"github.com/anyproto/anytype-heart/pb"
+	pb2 "github.com/anyproto/anytype-heart/pkg/lib/cafe/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/datastore"
+	"github.com/anyproto/anytype-heart/pkg/lib/pin"
 )
 
 func (mw *Middleware) FileListOffload(cctx context.Context, req *pb.RpcFileListOffloadRequest) *pb.RpcFileListOffloadResponse {

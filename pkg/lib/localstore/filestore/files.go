@@ -3,15 +3,15 @@ package filestore
 import (
 	"context"
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore"
-	ds "github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore/noctxds"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/pkg/lib/datastore"
+	ds "github.com/anyproto/anytype-heart/pkg/lib/datastore/noctxds"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 	"sync"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/storage"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/util"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/storage"
+	"github.com/anyproto/anytype-heart/pkg/lib/util"
 	"github.com/gogo/protobuf/proto"
 	dsCtx "github.com/ipfs/go-datastore"
 )

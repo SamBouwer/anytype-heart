@@ -1,10 +1,10 @@
-//go:generate mockgen -package mockStatus -destination status_mock.go github.com/anytypeio/go-anytype-middleware/core/status Service
+//go:generate mockgen -package mockStatus -destination status_mock.go github.com/anyproto/anytype-heart/core/status Service
 package mockStatus
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/core/status"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/core/status"
 	"github.com/golang/mock/gomock"
 )
 

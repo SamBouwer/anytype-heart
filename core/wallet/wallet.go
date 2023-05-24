@@ -2,10 +2,10 @@ package wallet
 
 import (
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/metrics"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
-	walletUtil "github.com/anytypeio/go-anytype-middleware/pkg/lib/wallet"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/metrics"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
+	walletUtil "github.com/anyproto/anytype-heart/pkg/lib/wallet"
 	"io/ioutil"
 	"path/filepath"
 )

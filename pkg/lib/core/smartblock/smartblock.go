@@ -9,8 +9,8 @@ import (
 	"github.com/multiformats/go-multihash"
 	"github.com/textileio/go-threads/core/thread"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/addr"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/addr"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 )
 
 type SmartBlockType uint64

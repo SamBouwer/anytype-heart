@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core/smartblock"
+	"github.com/anyproto/anytype-heart/pkg/lib/core/smartblock"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -22,10 +22,10 @@ var reindex = &cobra.Command{
 	Short: "Reindex all existing objects in the local repo",
 	Run: func(c *cobra.Command, args []string) {
 		// todo: reimplement reindex CLI using new mechanism
-		for _, arg := range args{
-			fmt.Print(arg+": ")
+		for _, arg := range args {
+			fmt.Print(arg + ": ")
 			t, err := smartblock.SmartBlockTypeFromID(arg)
-			if err!= nil {
+			if err != nil {
 				fmt.Println(err.Error())
 			} else {
 				fmt.Printf("%d\n", t)

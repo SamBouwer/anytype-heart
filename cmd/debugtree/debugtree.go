@@ -10,10 +10,10 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/change"
-	"github.com/anytypeio/go-anytype-middleware/core/debug/debugtree"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core/smartblock"
-	"github.com/anytypeio/go-anytype-middleware/util/pbtypes"
+	"github.com/anyproto/anytype-heart/change"
+	"github.com/anyproto/anytype-heart/core/debug/debugtree"
+	"github.com/anyproto/anytype-heart/pkg/lib/core/smartblock"
+	"github.com/anyproto/anytype-heart/util/pbtypes"
 	"github.com/goccy/go-graphviz"
 )
 

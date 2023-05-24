@@ -9,7 +9,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 )
 
 // Condition constants define how to compare a vector clock against another,

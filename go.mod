@@ -1,14 +1,14 @@
-module github.com/anytypeio/go-anytype-middleware
+module github.com/anyproto/anytype-heart
 
-go 1.18
+go 1.19
 
 require (
 	github.com/JohannesKaufmann/html-to-markdown v0.0.0-00010101000000-000000000000
 	github.com/PuerkitoBio/goquery v1.8.1
 	github.com/adrium/goheif v0.0.0-20230113233934-ca402e77a786
-	github.com/anytypeio/go-naturaldate/v2 v2.0.1
-	github.com/anytypeio/go-slip10 v0.0.0-20200330112030-a352ca8495e4
-	github.com/anytypeio/go-slip21 v0.0.0-20200218204727-e2e51e20ab51
+	github.com/anyproto/go-naturaldate/v2 v2.0.2-0.20230524105841-9829cfd13438
+	github.com/anyproto/go-slip10 v1.0.0
+	github.com/anyproto/go-slip21 v1.0.0
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/blevesearch/bleve/v2 v2.3.8
 	github.com/chai2010/webp v1.1.1
@@ -295,28 +295,28 @@ require (
 	nhooyr.io/websocket v1.8.7 // indirect
 )
 
-replace github.com/elastic/gosigar => github.com/anytypeio/gosigar v0.0.0-20220811145612-92bd3366198a
+replace github.com/elastic/gosigar => github.com/anyproto/gosigar v0.0.0-20220811145612-92bd3366198a
 
-replace github.com/textileio/go-ds-badger3 => github.com/anytypeio/go-ds-badger3 v0.3.1-0.20221103102622-3233d4e13cb8
+replace github.com/textileio/go-ds-badger3 => github.com/anyproto/go-ds-badger3 v0.3.1-0.20230524095230-434cf6346d9b
 
 replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.1.1-0.20220403145359-8e850b710d6d
 
-replace github.com/JohannesKaufmann/html-to-markdown => github.com/anytypeio/html-to-markdown v0.0.0-20200617145221-2afd2a14bae1
+replace github.com/JohannesKaufmann/html-to-markdown => github.com/anyproto/html-to-markdown v0.0.0-20200617145221-2afd2a14bae1
 
-replace github.com/textileio/go-threads => github.com/anytypeio/go-threads v1.1.6-0.20221213174125-89c8cdb03fe8
+replace github.com/textileio/go-threads => github.com/anyproto/go-threads v1.1.6-0.20221213174125-89c8cdb03fe8
 
-replace github.com/hsanjuan/ipfs-lite => github.com/anytypeio/ipfs-lite v1.4.3-0.20221213154513-adb3ebf9381c
+replace github.com/hsanjuan/ipfs-lite => github.com/anyproto/ipfs-lite v1.4.3-0.20221213154513-adb3ebf9381c
 
-replace github.com/textileio/go-libp2p-pubsub-rpc => github.com/anytypeio/go-libp2p-pubsub-rpc v0.0.10-0.20221213171524-df44a6b1795d
+replace github.com/textileio/go-libp2p-pubsub-rpc => github.com/anyproto/go-libp2p-pubsub-rpc v0.0.10-0.20221213171524-df44a6b1795d
 
-replace github.com/msingleton/amplitude-go => github.com/anytypeio/amplitude-go v0.0.0-20211130222238-8d16496a9b31
+replace github.com/msingleton/amplitude-go => github.com/anyproto/amplitude-go v0.0.0-20211130222238-8d16496a9b31
 
-replace github.com/ipfs/go-log/v2 => github.com/anytypeio/go-log/v2 v2.1.2-0.20220721095711-bcf09ff293b2
+replace github.com/ipfs/go-log/v2 => github.com/anyproto/go-log/v2 v2.1.2-0.20220721095711-bcf09ff293b2
 
-replace gopkg.in/Graylog2/go-gelf.v2 => github.com/anytypeio/go-gelf v0.0.0-20210418191311-774bd5b016e7
+replace gopkg.in/Graylog2/go-gelf.v2 => github.com/anyproto/go-gelf v0.0.0-20210418191311-774bd5b016e7
 
 replace github.com/araddon/dateparse => github.com/mehanizm/dateparse v0.0.0-20210806203422-f82c8742c9f8 // use a fork to support dd.mm.yyyy date format
 
-replace github.com/multiformats/go-multiaddr => github.com/anytypeio/go-multiaddr v0.8.1-0.20221213144344-0b6b93adaec4
+replace github.com/multiformats/go-multiaddr => github.com/anyproto/go-multiaddr v0.8.1-0.20221213144344-0b6b93adaec4
 
-replace github.com/gogo/protobuf => github.com/anytypeio/protobuf v1.3.3-0.20230114170705-8e2cb769640b
+replace github.com/gogo/protobuf => github.com/anyproto/protobuf v1.3.3-0.20230114170705-8e2cb769640b

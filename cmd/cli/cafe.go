@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/core/anytype"
-	coreService "github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/profilefinder"
-	walletUtil "github.com/anytypeio/go-anytype-middleware/pkg/lib/wallet"
-	"github.com/anytypeio/go-anytype-middleware/util/console"
+	"github.com/anyproto/anytype-heart/core/anytype"
+	coreService "github.com/anyproto/anytype-heart/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/profilefinder"
+	walletUtil "github.com/anyproto/anytype-heart/pkg/lib/wallet"
+	"github.com/anyproto/anytype-heart/util/console"
 	"github.com/spf13/cobra"
 )
 

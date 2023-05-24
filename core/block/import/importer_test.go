@@ -8,12 +8,12 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
-	cv "github.com/anytypeio/go-anytype-middleware/core/block/import/converter"
-	pbc "github.com/anytypeio/go-anytype-middleware/core/block/import/pb"
-	"github.com/anytypeio/go-anytype-middleware/core/block/import/web/parsers"
-	"github.com/anytypeio/go-anytype-middleware/core/session"
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+	cv "github.com/anyproto/anytype-heart/core/block/import/converter"
+	pbc "github.com/anyproto/anytype-heart/core/block/import/pb"
+	"github.com/anyproto/anytype-heart/core/block/import/web/parsers"
+	"github.com/anyproto/anytype-heart/core/session"
+	"github.com/anyproto/anytype-heart/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 )
 
 func Test_ImportSuccess(t *testing.T) {

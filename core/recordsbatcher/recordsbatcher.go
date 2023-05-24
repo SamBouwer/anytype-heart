@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
+	"github.com/anyproto/anytype-heart/app"
 	"github.com/cheggaaa/mb"
 )
 

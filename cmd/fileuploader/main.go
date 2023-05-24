@@ -13,12 +13,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pin"
+	"github.com/anyproto/anytype-heart/pkg/lib/pin"
 
-	"github.com/anytypeio/go-anytype-middleware/core"
-	"github.com/anytypeio/go-anytype-middleware/core/event"
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	pb2 "github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe/pb"
+	"github.com/anyproto/anytype-heart/core"
+	"github.com/anyproto/anytype-heart/core/event"
+	"github.com/anyproto/anytype-heart/pb"
+	pb2 "github.com/anyproto/anytype-heart/pkg/lib/cafe/pb"
 )
 
 func main() {

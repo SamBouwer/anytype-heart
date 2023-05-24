@@ -1,16 +1,16 @@
-//go:generate mockgen -package testMock -destination anytype_mock.go github.com/anytypeio/go-anytype-middleware/pkg/lib/core Service,SmartBlock,SmartBlockSnapshot,File,Image
-//go:generate mockgen -package testMock -destination objectstore_mock.go github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/objectstore ObjectStore
-//go:generate mockgen -package testMock -destination history_mock.go github.com/anytypeio/go-anytype-middleware/core/block/undo History
+//go:generate mockgen -package testMock -destination anytype_mock.go github.com/anyproto/anytype-heart/pkg/lib/core Service,SmartBlock,SmartBlockSnapshot,File,Image
+//go:generate mockgen -package testMock -destination objectstore_mock.go github.com/anyproto/anytype-heart/pkg/lib/localstore/objectstore ObjectStore
+//go:generate mockgen -package testMock -destination history_mock.go github.com/anyproto/anytype-heart/core/block/undo History
 package testMock
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/core/kanban"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/objectstore"
-	"github.com/anytypeio/go-anytype-middleware/util/testMock/mockKanban"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/core/kanban"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/objectstore"
+	"github.com/anyproto/anytype-heart/util/testMock/mockKanban"
 	"github.com/golang/mock/gomock"
 )
 

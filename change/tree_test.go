@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
 )
 
 func TestTree_Add(t *testing.T) {

@@ -3,7 +3,7 @@ package change
 import (
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/core/block/editor/state"
+	"github.com/anyproto/anytype-heart/core/block/editor/state"
 )
 
 func NewStateCache() *stateCache {

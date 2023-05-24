@@ -6,8 +6,8 @@ import (
 	"github.com/ipfs/go-cid"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/files"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/filestore"
+	"github.com/anyproto/anytype-heart/pkg/lib/files"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/filestore"
 )
 
 var ErrFileNotFound = fmt.Errorf("file not found")

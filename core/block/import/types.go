@@ -5,17 +5,17 @@ import (
 
 	"github.com/gogo/protobuf/types"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/core/block/import/converter"
-	"github.com/anytypeio/go-anytype-middleware/core/session"
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core/smartblock"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/core/block/import/converter"
+	"github.com/anyproto/anytype-heart/core/session"
+	"github.com/anyproto/anytype-heart/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/core/smartblock"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 	// import plugins
-	_ "github.com/anytypeio/go-anytype-middleware/core/block/import/html"
-	_ "github.com/anytypeio/go-anytype-middleware/core/block/import/markdown"
-	_ "github.com/anytypeio/go-anytype-middleware/core/block/import/notion"
-	_ "github.com/anytypeio/go-anytype-middleware/core/block/import/pb"
+	_ "github.com/anyproto/anytype-heart/core/block/import/html"
+	_ "github.com/anyproto/anytype-heart/core/block/import/markdown"
+	_ "github.com/anyproto/anytype-heart/core/block/import/notion"
+	_ "github.com/anyproto/anytype-heart/core/block/import/pb"
 )
 
 // Importer incapsulate logic with import

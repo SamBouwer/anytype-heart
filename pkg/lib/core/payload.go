@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/wallet"
+	"github.com/anyproto/anytype-heart/pkg/lib/wallet"
 	"github.com/gogo/protobuf/proto"
 	cbornode "github.com/ipfs/go-ipld-cbor"
 )

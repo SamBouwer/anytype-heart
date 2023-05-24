@@ -1,21 +1,21 @@
 package subscription
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/core/kanban"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/database"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
-	"github.com/anytypeio/go-anytype-middleware/util/pbtypes"
-	"github.com/anytypeio/go-anytype-middleware/util/slice"
+	"github.com/anyproto/anytype-heart/core/kanban"
+	"github.com/anyproto/anytype-heart/pkg/lib/database"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/util/pbtypes"
+	"github.com/anyproto/anytype-heart/util/slice"
 	"github.com/gogo/protobuf/types"
 )
 
-func (s *service) newGroupSub(id string, relKey string, f *database.Filters,  groups []*model.BlockContentDataviewGroup) *groupSub {
+func (s *service) newGroupSub(id string, relKey string, f *database.Filters, groups []*model.BlockContentDataviewGroup) *groupSub {
 	sub := &groupSub{
-		id:    id,
+		id:     id,
 		relKey: relKey,
-		cache: s.cache,
-		set: make(map[string]struct{}),
-		f: f,
+		cache:  s.cache,
+		set:    make(map[string]struct{}),
+		f:      f,
 		groups: groups,
 	}
 	return sub
@@ -54,9 +54,9 @@ func (gs *groupSub) onChange(ctx *opCtx) {
 		if _, inSet := gs.set[ctxEntry.id]; inSet {
 			cacheEntry := gs.cache.Get(ctxEntry.id)
 			if !checkGroups && cacheEntry != nil {
-					oldList := pbtypes.GetStringList(cacheEntry.data, gs.relKey)
-					newList := pbtypes.GetStringList(ctxEntry.data, gs.relKey)
-					checkGroups = !slice.UnsortedEquals(oldList, newList)
+				oldList := pbtypes.GetStringList(cacheEntry.data, gs.relKey)
+				newList := pbtypes.GetStringList(ctxEntry.data, gs.relKey)
+				checkGroups = !slice.UnsortedEquals(oldList, newList)
 			}
 			if !inFilter {
 				gs.cache.RemoveSubId(ctxEntry.id, gs.id)
@@ -74,7 +74,7 @@ func (gs *groupSub) onChange(ctx *opCtx) {
 		for id := range gs.set {
 			if e := ctx.getEntry(id); e != nil {
 				records = append(records, database.Record{Details: e.data})
-			}else {
+			} else {
 				records = append(records, database.Record{Details: gs.cache.Get(id).data})
 			}
 		}
@@ -95,7 +95,7 @@ func (gs *groupSub) onChange(ctx *opCtx) {
 			for _, removedGroup := range removedIds {
 				for _, g := range gs.groups {
 					if len(g.GetTag().Ids) > 1 && removedGroup == g.Id {
-						ctx.groups = append(ctx.groups, opGroup{subId: gs.id,  group: g, remove: true})
+						ctx.groups = append(ctx.groups, opGroup{subId: gs.id, group: g, remove: true})
 					}
 				}
 			}
@@ -103,7 +103,7 @@ func (gs *groupSub) onChange(ctx *opCtx) {
 			for _, addGroupId := range addedIds {
 				for _, g := range newGroups {
 					if addGroupId == g.Id {
-						ctx.groups = append(ctx.groups, opGroup{subId: gs.id,  group: g})
+						ctx.groups = append(ctx.groups, opGroup{subId: gs.id, group: g})
 					}
 				}
 			}

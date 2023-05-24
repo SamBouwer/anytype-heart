@@ -3,16 +3,16 @@ package profilefinder
 import (
 	"context"
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe"
-	cafePb "github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/cafe"
+	cafePb "github.com/anyproto/anytype-heart/pkg/lib/cafe/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"io"
 	"sync"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
+	"github.com/anyproto/anytype-heart/app"
 )
 
 const CName = "process"

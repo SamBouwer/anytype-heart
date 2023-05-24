@@ -8,7 +8,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/util/slice"
+	"github.com/anyproto/anytype-heart/util/slice"
 )
 
 type Mode int

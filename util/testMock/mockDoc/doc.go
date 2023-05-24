@@ -1,9 +1,9 @@
-//go:generate mockgen -package mockDoc -destination doc_mock.go github.com/anytypeio/go-anytype-middleware/core/block/doc Service
+//go:generate mockgen -package mockDoc -destination doc_mock.go github.com/anyproto/anytype-heart/core/block/doc Service
 package mockDoc
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/core/block/doc"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/core/block/doc"
 	"github.com/golang/mock/gomock"
 )
 

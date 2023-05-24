@@ -3,14 +3,14 @@ package pin
 import (
 	"context"
 	"errors"
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/filestore"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/filestore"
 	"sync"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe"
-	cafepb "github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/cafe"
+	cafepb "github.com/anyproto/anytype-heart/pkg/lib/cafe/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 	"github.com/dgtony/collections/hashset"
 )
 

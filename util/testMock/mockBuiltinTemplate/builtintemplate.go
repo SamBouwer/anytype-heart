@@ -1,10 +1,10 @@
-//go:generate mockgen -package mockBuiltinTemplate -destination builtintemplate_mock.go github.com/anytypeio/go-anytype-middleware/util/builtintemplate BuiltinTemplate
+//go:generate mockgen -package mockBuiltinTemplate -destination builtintemplate_mock.go github.com/anyproto/anytype-heart/util/builtintemplate BuiltinTemplate
 package mockBuiltinTemplate
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/util/builtintemplate"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/util/builtintemplate"
 	"github.com/golang/mock/gomock"
 )
 

@@ -5,8 +5,8 @@ source: pkg/lib/bundle/types.json
 package bundle
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/localstore/addr"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+	"github.com/anyproto/anytype-heart/pkg/lib/localstore/addr"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 )
 
 const TypeChecksum = "de53240e6875b46532feb5ee9e9b0996db1e832050d55519fce6041b175114c2"

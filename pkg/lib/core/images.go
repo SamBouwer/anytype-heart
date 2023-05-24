@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/files"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/storage"
+	"github.com/anyproto/anytype-heart/pkg/lib/files"
+	"github.com/anyproto/anytype-heart/pkg/lib/pb/storage"
 )
 
 var ErrImageNotFound = fmt.Errorf("image not found")

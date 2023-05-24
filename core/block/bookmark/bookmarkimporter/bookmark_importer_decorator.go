@@ -3,14 +3,14 @@ package bookmarkimporter
 import (
 	"go.uber.org/zap"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
-	bookmarksvc "github.com/anytypeio/go-anytype-middleware/core/block/bookmark"
-	"github.com/anytypeio/go-anytype-middleware/core/block/import"
-	"github.com/anytypeio/go-anytype-middleware/core/session"
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/bundle"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
-	"github.com/anytypeio/go-anytype-middleware/util/pbtypes"
+	"github.com/anyproto/anytype-heart/app"
+	bookmarksvc "github.com/anyproto/anytype-heart/core/block/bookmark"
+	"github.com/anyproto/anytype-heart/core/block/import"
+	"github.com/anyproto/anytype-heart/core/session"
+	"github.com/anyproto/anytype-heart/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/bundle"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/util/pbtypes"
 	"github.com/gogo/protobuf/types"
 )
 
@@ -41,7 +41,7 @@ func (bd *BookmarkImporterDecorator) Init(a *app.App) (err error) {
 func (bd *BookmarkImporterDecorator) CreateBookmarkObject(details *types.Struct, getContent bookmarksvc.ContentFuture) (objectId string, newDetails *types.Struct, err error) {
 	url := pbtypes.GetString(details, bundle.RelationKeySource.String())
 	if objectId, newDetails, err = bd.Importer.ImportWeb(nil, &pb.RpcObjectImportRequest{
-		Params: &pb.RpcObjectImportRequestParamsOfBookmarksParams{BookmarksParams: &pb.RpcObjectImportRequestBookmarksParams{Url: url}},
+		Params:                &pb.RpcObjectImportRequestParamsOfBookmarksParams{BookmarksParams: &pb.RpcObjectImportRequestBookmarksParams{Url: url}},
 		UpdateExistingObjects: true,
 	}); err != nil {
 		log.With(zap.String("function", "BookmarkFetch")).With(zap.String("message", "failed to import bookmark")).Error(err)

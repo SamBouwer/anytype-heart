@@ -5,8 +5,8 @@ import (
 
 	"github.com/gogo/protobuf/jsonpb"
 
-	"github.com/anytypeio/go-anytype-middleware/pb"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
 )
 
 func NewChangeFromRecord(record core.SmartblockRecordEnvelope) (*Change, error) {

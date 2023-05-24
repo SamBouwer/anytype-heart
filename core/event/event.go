@@ -1,8 +1,8 @@
 package event
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/pb"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/pb"
 )
 
 const CName = "eventSender"

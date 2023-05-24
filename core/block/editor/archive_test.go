@@ -1,11 +1,11 @@
 package editor
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/core/block/editor/collection"
+	"github.com/anyproto/anytype-heart/core/block/editor/collection"
 	"testing"
 
-	"github.com/anytypeio/go-anytype-middleware/core/block/editor/smartblock"
-	"github.com/anytypeio/go-anytype-middleware/core/block/editor/smartblock/smarttest"
+	"github.com/anyproto/anytype-heart/core/block/editor/smartblock"
+	"github.com/anyproto/anytype-heart/core/block/editor/smartblock/smarttest"
 	"github.com/stretchr/testify/require"
 )
 

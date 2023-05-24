@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/threads"
+	"github.com/anyproto/anytype-heart/pkg/lib/threads"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/files"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/vclock"
+	"github.com/anyproto/anytype-heart/pkg/lib/files"
+	"github.com/anyproto/anytype-heart/pkg/lib/vclock"
 	ds "github.com/ipfs/go-datastore"
 	badger "github.com/ipfs/go-ds-badger"
 	"github.com/textileio/go-threads/core/thread"

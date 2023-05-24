@@ -1,7 +1,7 @@
 package subscription
 
 import (
-	"github.com/anytypeio/go-anytype-middleware/util/slice"
+	"github.com/anyproto/anytype-heart/util/slice"
 	"github.com/gogo/protobuf/types"
 )
 

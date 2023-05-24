@@ -4,7 +4,7 @@ source: pkg/lib/bundle/layouts.json
 */
 package bundle
 
-import "github.com/anytypeio/go-anytype-middleware/pkg/lib/pb/model"
+import "github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 
 const LayoutChecksum = "bf12de04f3ba63de16539f0dba7b6061bf1e9d16cd79567db4720618d71f9fbd"
 

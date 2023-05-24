@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"sync"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
+	"github.com/anyproto/anytype-heart/app"
 	"github.com/golang-jwt/jwt/v4"
 )
 

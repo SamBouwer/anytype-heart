@@ -2,7 +2,7 @@ package datastore
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/app"
+	"github.com/anyproto/anytype-heart/app"
 	ds "github.com/ipfs/go-datastore"
 	"github.com/textileio/go-threads/db/keytransform"
 )

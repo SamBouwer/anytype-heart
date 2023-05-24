@@ -3,10 +3,10 @@ package threads
 import (
 	"context"
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/metrics"
+	"github.com/anyproto/anytype-heart/metrics"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/util"
+	"github.com/anyproto/anytype-heart/pkg/lib/util"
 	"github.com/ipfs/go-cid"
 	"github.com/libp2p/go-libp2p/core/peer"
 	ma "github.com/multiformats/go-multiaddr"

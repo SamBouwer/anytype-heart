@@ -3,16 +3,16 @@ package threads
 import (
 	"context"
 	"fmt"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/cafe/pb"
+	"github.com/anyproto/anytype-heart/pkg/lib/cafe/pb"
 	threadsUtil "github.com/textileio/go-threads/util"
 	"sync"
 	"time"
 
-	"github.com/anytypeio/go-anytype-middleware/core/block/process"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/ipfs/helpers"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/logging"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/util/nocloserds"
-	walletUtil "github.com/anytypeio/go-anytype-middleware/pkg/lib/wallet"
+	"github.com/anyproto/anytype-heart/core/block/process"
+	"github.com/anyproto/anytype-heart/pkg/lib/ipfs/helpers"
+	"github.com/anyproto/anytype-heart/pkg/lib/logging"
+	"github.com/anyproto/anytype-heart/pkg/lib/util/nocloserds"
+	walletUtil "github.com/anyproto/anytype-heart/pkg/lib/wallet"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/textileio/go-threads/logstore/lstoreds"
@@ -29,13 +29,13 @@ import (
 	"github.com/textileio/go-threads/db/keytransform"
 	"google.golang.org/grpc"
 
-	"github.com/anytypeio/go-anytype-middleware/app"
-	"github.com/anytypeio/go-anytype-middleware/core/wallet"
-	"github.com/anytypeio/go-anytype-middleware/metrics"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core/smartblock"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/ipfs"
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/util"
+	"github.com/anyproto/anytype-heart/app"
+	"github.com/anyproto/anytype-heart/core/wallet"
+	"github.com/anyproto/anytype-heart/metrics"
+	"github.com/anyproto/anytype-heart/pkg/lib/core/smartblock"
+	"github.com/anyproto/anytype-heart/pkg/lib/datastore"
+	"github.com/anyproto/anytype-heart/pkg/lib/ipfs"
+	"github.com/anyproto/anytype-heart/pkg/lib/util"
 )
 
 const simultaneousRequests = 20

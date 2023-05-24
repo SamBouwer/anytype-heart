@@ -6,7 +6,7 @@ package change
 import (
 	"fmt"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/core"
+	"github.com/anyproto/anytype-heart/pkg/lib/core"
 )
 
 func (t *Tree) Graphviz() (data string, err error) {

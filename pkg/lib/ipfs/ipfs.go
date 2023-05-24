@@ -2,7 +2,7 @@ package ipfs
 
 import (
 	"context"
-	"github.com/anytypeio/go-anytype-middleware/app"
+	"github.com/anyproto/anytype-heart/app"
 	cid "github.com/ipfs/go-cid"
 	blockstore "github.com/ipfs/go-ipfs-blockstore"
 	ipld "github.com/ipfs/go-ipld-format"

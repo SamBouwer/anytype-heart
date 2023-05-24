@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/anytypeio/go-anytype-middleware/app/testapp"
-	"github.com/anytypeio/go-anytype-middleware/core/block/source"
-	"github.com/anytypeio/go-anytype-middleware/util/testMock/mockSource"
+	"github.com/anyproto/anytype-heart/app/testapp"
+	"github.com/anyproto/anytype-heart/core/block/source"
+	"github.com/anyproto/anytype-heart/util/testMock/mockSource"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )
