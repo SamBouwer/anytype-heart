@@ -312,7 +312,9 @@ func (mw *Middleware) AccountSelect(cctx context.Context, req *pb.RpcAccountSele
 		if strings.Contains(err.Error(), errSubstringMultipleAnytypeInstance) {
 			return response(nil, pb.RpcAccountSelectResponseError_ANOTHER_ANYTYPE_PROCESS_IS_RUNNING, err)
 		}
-
+		if errors.Is(err, handshake.ErrIncompatibleVersion) {
+			return response(nil, pb.RpcAccountSelectResponseError_FAILED_TO_FETCH_REMOTE_NODE_HAS_INCOMPATIBLE_PROTO_VERSION, fmt.Errorf("can't fetch account's data because remote nodes have incompatible protocol version. Please update anytype to the latest version"))
+		}
 		return response(nil, pb.RpcAccountSelectResponseError_FAILED_TO_RUN_NODE, err)
 	}
 

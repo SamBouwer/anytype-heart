@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/anytypeio/go-anytype-middleware/pkg/lib/datastore/noctxds"
+	"github.com/anyproto/anytype-heart/pkg/lib/datastore/noctxds"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
