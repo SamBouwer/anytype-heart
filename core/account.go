@@ -14,6 +14,7 @@ import (
 	"github.com/anyproto/any-sync/app"
 	"github.com/anyproto/any-sync/commonspace/object/treemanager"
 	"github.com/anyproto/any-sync/commonspace/spacesyncproto"
+	"github.com/anyproto/any-sync/net/secureservice/handshake"
 	"github.com/anyproto/any-sync/util/crypto"
 	cp "github.com/otiai10/copy"
 
