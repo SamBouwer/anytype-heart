@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/types"
+	"github.com/samber/lo"
 
 	"github.com/anyproto/anytype-heart/core/block/editor/state"
 	"github.com/anyproto/anytype-heart/core/block/editor/widget"
@@ -21,7 +22,10 @@ import (
 	"github.com/anyproto/anytype-heart/pkg/lib/logging"
 	"github.com/anyproto/anytype-heart/pkg/lib/pb/model"
 	"github.com/anyproto/anytype-heart/util/pbtypes"
+	"github.com/anyproto/anytype-heart/util/slice"
 )
+
+var randomIcons = []string{"📓", "📕", "📗", "📘", "📙", "📖", "📔", "📒", "📝", "📄", "📑"}
 
 var log = logging.Logger("import")
 
@@ -35,16 +39,17 @@ func GetSourceDetail(fileName, importPath string) string {
 	return source.String()
 }
 
-func GetDetails(name string) *types.Struct {
-	var title string
-
-	if title == "" {
-		title = strings.TrimSuffix(filepath.Base(name), filepath.Ext(name))
+func GetCommonDetails(sourcePath, name, emoji string) *types.Struct {
+	if name == "" {
+		name = strings.TrimSuffix(filepath.Base(sourcePath), filepath.Ext(sourcePath))
 	}
-
+	if emoji == "" {
+		emoji = slice.GetRandomString(randomIcons, name)
+	}
 	fields := map[string]*types.Value{
-		bundle.RelationKeyName.String():           pbtypes.String(title),
-		bundle.RelationKeySourceFilePath.String(): pbtypes.String(name),
+		bundle.RelationKeyName.String():           pbtypes.String(name),
+		bundle.RelationKeySourceFilePath.String(): pbtypes.String(sourcePath),
+		bundle.RelationKeyIconEmoji.String():      pbtypes.String(emoji),
 	}
 	return &types.Struct{Fields: fields}
 }
@@ -66,35 +71,61 @@ func UpdateLinksToObjects(st *state.State, oldIDtoNew map[string]string, pageID 
 }
 
 func handleDataviewBlock(block simple.Block, oldIDtoNew map[string]string, st *state.State) {
-	dataview := block.Model().GetDataview()
-	target := dataview.TargetObjectId
+	dataView := block.Model().GetDataview()
+	target := dataView.TargetObjectId
 	if target != "" {
 		newTarget := oldIDtoNew[target]
 		if newTarget == "" {
 			newTarget = addr.MissingObject
 		}
-		dataview.TargetObjectId = newTarget
+		dataView.TargetObjectId = newTarget
 		st.Set(simple.New(block.Model()))
 	}
 
-	for _, view := range dataview.GetViews() {
+	for _, view := range dataView.GetViews() {
 		for _, filter := range view.GetFilters() {
 			updateObjectIDsInFilter(filter, oldIDtoNew)
 		}
+		for _, relation := range view.Relations {
+			relationID := addr.RelationKeyToIdPrefix + relation.Key
+			if newID, ok := oldIDtoNew[relationID]; ok && newID != relationID {
+				updateRelationID(block.(dataview.Block), relation, view, newID)
+			}
+		}
 	}
-	for _, group := range dataview.GetGroupOrders() {
+	for _, group := range dataView.GetGroupOrders() {
 		for _, vg := range group.ViewGroups {
 			groups := replaceChunks(vg.GroupId, oldIDtoNew)
 			sort.Strings(groups)
 			vg.GroupId = strings.Join(groups, "")
 		}
 	}
-	for _, group := range dataview.GetObjectOrders() {
+	for _, group := range dataView.GetObjectOrders() {
 		for i, id := range group.ObjectIds {
 			if newId, exist := oldIDtoNew[id]; exist {
 				group.ObjectIds[i] = newId
 			}
 		}
+	}
+}
+
+func updateRelationID(db dataview.Block, relation *model.BlockContentDataviewRelation, view *model.BlockContentDataviewView, newID string) {
+	oldKey := relation.Key
+	err := db.RemoveViewRelations(view.Id, []string{oldKey})
+	if err != nil {
+		log.Error("failed to remove relation from view, %s", err.Error())
+		return
+	}
+	relation.Key = strings.TrimPrefix(newID, addr.RelationKeyToIdPrefix)
+	err = db.AddViewRelation(view.Id, relation)
+	if err != nil {
+		log.Error("failed to add new relations from view, %s", err.Error())
+		return
+	}
+	if relationLink, ok := lo.Find(db.Model().GetDataview().GetRelationLinks(), func(relationLink *model.RelationLink) bool {
+		return relationLink.Key == oldKey
+	}); ok {
+		relationLink.Key = relation.Key
 	}
 }
 
@@ -179,7 +210,7 @@ func handleMarkdownTest(oldIDtoNew map[string]string, block simple.Block, st *st
 	st.Set(simple.New(block.Model()))
 }
 
-func UpdateRelationsIDs(st *state.State, oldIDtoNew map[string]string) {
+func UpdateObjectIDsInRelations(st *state.State, oldIDtoNew map[string]string) {
 	rels := st.GetRelationLinks()
 	for k, v := range st.Details().GetFields() {
 		relLink := rels.Get(k)
@@ -272,6 +303,34 @@ func replaceChunks(s string, oldToNew map[string]string) []string {
 	}
 
 	return result
+}
+
+func AddRelationsToDataView(collectionState *state.State, relationLink *model.RelationLink) error {
+	return collectionState.Iterate(func(block simple.Block) (isContinue bool) {
+		if dataView, ok := block.(dataview.Block); ok {
+			if len(block.Model().GetDataview().GetViews()) == 0 {
+				return true
+			}
+			for _, view := range block.Model().GetDataview().GetViews() {
+				err := dataView.AddViewRelation(view.GetId(), &model.BlockContentDataviewRelation{
+					Key:       relationLink.Key,
+					IsVisible: true,
+					Width:     192,
+				})
+				if err != nil {
+					return true
+				}
+			}
+			err := dataView.AddRelation(&model.RelationLink{
+				Key:    relationLink.Key,
+				Format: relationLink.Format,
+			})
+			if err != nil {
+				return true
+			}
+		}
+		return true
+	})
 }
 
 func ConvertStringToTime(t string) int64 {
