@@ -72,6 +72,7 @@ import (
 	"github.com/anyproto/anytype-heart/util/builtintemplate"
 	"github.com/anyproto/anytype-heart/util/linkpreview"
 	"github.com/anyproto/anytype-heart/util/unsplash"
+	"github.com/anyproto/anytype-heart/util/vcs"
 )
 
 func BootstrapConfig(newAccount bool, isStaging bool, createBuiltinTemplates bool) *config.Config {
@@ -88,6 +89,8 @@ func BootstrapWallet(rootPath string, derivationResult crypto.DerivationResult) 
 
 func StartNewApp(ctx context.Context, components ...app.Component) (a *app.App, err error) {
 	a = new(app.App)
+	// the same as in Gelf
+	a.SetVersionName(vcs.GetVCSInfo().Version())
 	Bootstrap(a, components...)
 	metrics.SharedClient.SetAppVersion(a.Version())
 	metrics.SharedClient.Run()
