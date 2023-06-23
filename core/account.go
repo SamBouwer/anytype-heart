@@ -291,6 +291,7 @@ func (mw *Middleware) AccountSelect(cctx context.Context, req *pb.RpcAccountSele
 	}
 	var repoWasMissing bool
 	if _, err := os.Stat(filepath.Join(mw.rootPath, req.Id)); os.IsNotExist(err) {
+		return response(nil, pb.RpcAccountSelectResponseError_FAILED_TO_FETCH_REMOTE_NODE_HAS_INCOMPATIBLE_PROTO_VERSION, fmt.Errorf("can't fetch account's data because remote nodes have incompatible protocol version. Please update anytype to the latest version"))
 		repoWasMissing = true
 		if err = core.WalletInitRepo(mw.rootPath, res.Identity); err != nil {
 			return response(nil, pb.RpcAccountSelectResponseError_FAILED_TO_CREATE_LOCAL_REPO, err)
